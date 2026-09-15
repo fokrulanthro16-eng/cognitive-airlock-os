@@ -1,0 +1,303 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 680" width="100%" height="100%">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#030712"/>
+      <stop offset="50%" stop-color="#0b0f19"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    
+    <linearGradient id="cardGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#0f172a" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0b0f19" stop-opacity="0.95"/>
+    </linearGradient>
+    
+    <linearGradient id="cyanGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#06b6d4"/>
+      <stop offset="100%" stop-color="#3b82f6"/>
+    </linearGradient>
+
+    <linearGradient id="emeraldGlow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#10b981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+
+    <filter id="glowEffect" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <pattern id="grid" width="30" height="30" patternUnits="userSpaceOnUse">
+      <path d="M 30 0 L 0 0 0 30" fill="none" stroke="#1e293b" stroke-width="0.5" stroke-opacity="0.3"/>
+    </pattern>
+  </defs>
+
+  <style>
+    .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace; }
+    .font-sans { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; }
+    .neon-cyan { fill: #22d3ee; }
+    .neon-emerald { fill: #34d399; }
+    .text-slate-400 { fill: #94a3b8; }
+    .text-slate-500 { fill: #64748b; }
+    .text-slate-200 { fill: #e2e8f0; }
+  </style>
+
+  <!-- Background Base -->
+  <rect width="1200" height="680" fill="url(#bgGrad)"/>
+  <rect width="1200" height="680" fill="url(#grid)"/>
+
+  <!-- Outer HUD Frame Border -->
+  <rect x="20" y="20" width="1160" height="640" rx="16" fill="none" stroke="#1e293b" stroke-width="1.5"/>
+
+  <!-- ==================== HEADER BAR ==================== -->
+  <g transform="translate(40, 40)">
+    <rect width="1120" height="60" rx="12" fill="url(#cardGrad)" stroke="#1e293b" stroke-width="1"/>
+    
+    <!-- Pulse Status Dot -->
+    <circle cx="25" cy="30" r="5" fill="#22d3ee" filter="url(#glowEffect)"/>
+    
+    <!-- Title -->
+    <text x="40" y="35" class="font-mono text-slate-200" font-size="16" font-weight="bold" letter-spacing="1">COGNITIVE AIRLOCK OS</text>
+    <rect x="250" y="20" width="85" height="20" rx="4" fill="#06b6d4" fill-opacity="0.1" stroke="#06b6d4" stroke-width="0.8"/>
+    <text x="258" y="34" class="font-mono neon-cyan" font-size="10">v2.5.0-PROD</text>
+    
+    <text x="350" y="35" class="font-mono text-slate-500" font-size="11">ZERO-EXECUTION-AUTHORITY SOVEREIGN GUARDIAN</text>
+
+    <!-- Telemetry Badges (Right Header) -->
+    <g transform="translate(680, 18)">
+      <!-- Badge 1: LLM 0% -->
+      <rect x="0" y="0" width="130" height="24" rx="5" fill="#030712" stroke="#334155" stroke-width="0.8"/>
+      <circle cx="12" cy="12" r="3" fill="#f59e0b"/>
+      <text x="22" y="16" class="font-mono text-slate-200" font-size="10">LLM Authority: 0%</text>
+
+      <!-- Badge 2: Deterministic Airlock -->
+      <rect x="140" y="0" width="140" height="24" rx="5" fill="#030712" stroke="#10b981" stroke-width="0.8" stroke-opacity="0.5"/>
+      <circle cx="152" cy="12" r="3" fill="#10b981"/>
+      <text x="162" y="16" class="font-mono neon-emerald" font-size="10">Airlock: Deterministic</text>
+
+      <!-- Badge 3: Policy Cap -->
+      <rect x="290" y="0" width="140" height="24" rx="5" fill="#030712" stroke="#06b6d4" stroke-width="0.8" stroke-opacity="0.5"/>
+      <text x="300" y="16" class="font-mono neon-cyan" font-size="10">Benchmark: $60/hr</text>
+    </g>
+  </g>
+
+  <!-- ==================== LEFT COLUMN: RAW INGESTION DOCK ==================== -->
+  <g transform="translate(40, 115)">
+    <rect width="460" height="420" rx="12" fill="url(#cardGrad)" stroke="#1e293b" stroke-width="1"/>
+    
+    <!-- Dock Header -->
+    <g transform="translate(20, 20)">
+      <circle cx="5" cy="5" r="3" fill="#22d3ee"/>
+      <text x="16" y="9" class="font-mono neon-cyan" font-size="12" font-weight="bold">RAW INGESTION DOCK</text>
+      <text x="300" y="9" class="font-mono text-slate-500" font-size="10">PORT // AIRLOCK-01</text>
+      <line x1="0" y1="20" x2="420" y2="20" stroke="#1e293b" stroke-width="1"/>
+    </g>
+
+    <!-- Simulation Presets -->
+    <g transform="translate(20, 55)">
+      <text x="0" y="10" class="font-mono text-slate-400" font-size="10" font-weight="bold">SIMULATION VECTORS:</text>
+      
+      <!-- Button 1 -->
+      <rect x="0" y="18" width="98" height="36" rx="6" fill="#030712" stroke="#f59e0b" stroke-width="0.8" stroke-opacity="0.4"/>
+      <text x="8" y="34" class="font-sans text-slate-200" font-size="9" font-weight="bold">Scope Creep</text>
+      <text x="8" y="46" class="font-mono" fill="#f59e0b" font-size="7">UNBILLED SCOPE</text>
+
+      <!-- Button 2 -->
+      <rect x="106" y="18" width="98" height="36" rx="6" fill="#030712" stroke="#f43f5e" stroke-width="0.8" stroke-opacity="0.4"/>
+      <text x="114" y="34" class="font-sans text-slate-200" font-size="9" font-weight="bold">Budget Ceiling</text>
+      <text x="114" y="46" class="font-mono" fill="#f43f5e" font-size="7">CEILING &gt; $5K</text>
+
+      <!-- Button 3 -->
+      <rect x="212" y="18" width="98" height="36" rx="6" fill="#030712" stroke="#8b5cf6" stroke-width="0.8" stroke-opacity="0.4"/>
+      <text x="220" y="34" class="font-sans text-slate-200" font-size="9" font-weight="bold">PII Leak Dump</text>
+      <text x="220" y="46" class="font-mono" fill="#8b5cf6" font-size="7">PII REDACTION</text>
+
+      <!-- Button 4 (Active) -->
+      <rect x="318" y="18" width="98" height="36" rx="6" fill="#064e3b" fill-opacity="0.3" stroke="#10b981" stroke-width="1"/>
+      <text x="326" y="34" class="font-sans neon-emerald" font-size="9" font-weight="bold">Clean Retainer</text>
+      <text x="326" y="46" class="font-mono neon-emerald" font-size="7">SOVEREIGN APPROVED</text>
+    </g>
+
+    <!-- Source Channels & Voice Dictate -->
+    <g transform="translate(20, 125)">
+      <rect x="0" y="0" width="70" height="22" rx="4" fill="#030712" stroke="#334155" stroke-width="0.6"/>
+      <text x="12" y="15" class="font-mono text-slate-400" font-size="9">WhatsApp</text>
+
+      <rect x="76" y="0" width="60" height="22" rx="4" fill="#06b6d4" fill-opacity="0.15" stroke="#06b6d4" stroke-width="1"/>
+      <text x="92" y="15" class="font-mono neon-cyan" font-size="9">Slack ✓</text>
+
+      <rect x="142" y="0" width="60" height="22" rx="4" fill="#030712" stroke="#334155" stroke-width="0.6"/>
+      <text x="158" y="15" class="font-mono text-slate-400" font-size="9">Email</text>
+
+      <!-- Voice Dictate Trigger with Waveform -->
+      <rect x="290" y="0" width="130" height="22" rx="4" fill="#030712" stroke="#06b6d4" stroke-width="0.8"/>
+      <circle cx="304" cy="11" r="3" fill="#22d3ee"/>
+      <text x="314" y="15" class="font-mono neon-cyan" font-size="9">Voice Dictate (Web Audio)</text>
+    </g>
+
+    <!-- Client & Contract Metadata -->
+    <g transform="translate(20, 160)">
+      <rect x="0" y="0" width="205" height="42" rx="6" fill="#030712" stroke="#1e293b" stroke-width="0.8"/>
+      <text x="10" y="16" class="font-mono text-slate-500" font-size="8">CLIENT ENTITY</text>
+      <text x="10" y="32" class="font-mono text-slate-200" font-size="11" font-weight="bold">Starlight Media</text>
+
+      <rect x="215" y="0" width="205" height="42" rx="6" fill="#030712" stroke="#1e293b" stroke-width="0.8"/>
+      <text x="225" y="16" class="font-mono text-slate-500" font-size="8">CONTRACT REF</text>
+      <text x="225" y="32" class="font-mono text-slate-200" font-size="11" font-weight="bold">CTR-2026-SLM</text>
+    </g>
+
+    <!-- Console Text Area -->
+    <g transform="translate(20, 215)">
+      <rect width="420" height="135" rx="8" fill="#030712" stroke="#1e293b" stroke-width="1"/>
+      <text x="12" y="24" class="font-mono text-slate-300" font-size="10">Monthly retainer ticket: Perform routine dependency audit,</text>
+      <text x="12" y="42" class="font-mono text-slate-300" font-size="10">update Docker containers, optimize PostgreSQL read indices,</text>
+      <text x="12" y="60" class="font-mono text-slate-300" font-size="10">and verify weekly S3 backup snapshots.</text>
+      <text x="12" y="85" class="font-mono neon-cyan" font-size="10">&gt; Estimated effort: 6 hours</text>
+      <text x="12" y="103" class="font-mono neon-emerald" font-size="10">&gt; Contract pre-approved retainer budget: $450 USD</text>
+
+      <!-- Live Waveform Micro Telemetry -->
+      <g transform="translate(320, 115)">
+        <rect x="0" y="-4" width="3" height="12" rx="1.5" fill="#22d3ee"/>
+        <rect x="6" y="-12" width="3" height="20" rx="1.5" fill="#3b82f6"/>
+        <rect x="12" y="-8" width="3" height="16" rx="1.5" fill="#22d3ee"/>
+        <rect x="18" y="-15" width="3" height="23" rx="1.5" fill="#f43f5e"/>
+        <rect x="24" y="-6" width="3" height="14" rx="1.5" fill="#22d3ee"/>
+      </g>
+    </g>
+
+    <!-- Trigger Button -->
+    <g transform="translate(20, 365)">
+      <text x="0" y="24" class="font-mono text-slate-500" font-size="10">🔒 Zero-Execution-Authority Principle Active</text>
+      <rect x="270" y="5" width="150" height="35" rx="8" fill="url(#cyanGlow)" filter="url(#glowEffect)" fill-opacity="0.8"/>
+      <rect x="270" y="5" width="150" height="35" rx="8" fill="url(#cyanGlow)"/>
+      <text x="290" y="26" class="font-mono font-bold" fill="#030712" font-size="11">⚡ Ingest &amp; Airlock Lint</text>
+    </g>
+  </g>
+
+  <!-- ==================== RIGHT COLUMN: AIRLOCK MISSION COCKPIT ==================== -->
+  <g transform="translate(520, 115)">
+    <rect width="640" height="420" rx="12" fill="url(#cardGrad)" stroke="#1e293b" stroke-width="1"/>
+
+    <!-- Airlock Verdict Ribbon -->
+    <g transform="translate(20, 20)">
+      <rect width="360" height="32" rx="6" fill="#064e3b" fill-opacity="0.3" stroke="#10b981" stroke-width="1.2"/>
+      <circle cx="16" cy="16" r="4" fill="#10b981" filter="url(#glowEffect)"/>
+      <text x="28" y="20" class="font-mono neon-emerald" font-size="11" font-weight="bold">AIRLOCK STATUS: APPROVED (PASS)</text>
+
+      <rect x="375" y="0" width="115" height="32" rx="6" fill="#030712" stroke="#10b981" stroke-width="0.8"/>
+      <text x="385" y="20" class="font-mono neon-emerald" font-size="10">EXECUTION GRANTED</text>
+
+      <text x="500" y="20" class="font-mono text-slate-500" font-size="10">TRACE: trace_mu2zkyp</text>
+    </g>
+
+    <!-- SHA-256 Seal Banner -->
+    <g transform="translate(20, 62)">
+      <rect width="600" height="26" rx="6" fill="#030712" stroke="#1e293b" stroke-width="0.8"/>
+      <text x="12" y="17" class="font-mono neon-cyan" font-size="9" font-weight="bold">SHA-256 PROOF:</text>
+      <text x="110" y="17" class="font-mono text-slate-400" font-size="9">caed1fc80f6c5ab21a749ef82bad149b989b26801e5776922299ceb5ccad8d05</text>
+      <text x="550" y="17" class="font-mono neon-emerald" font-size="9">[SEALED ✓]</text>
+    </g>
+
+    <!-- Financial Telemetry 3-Card Grid -->
+    <g transform="translate(20, 98)">
+      <!-- Metric 1: Offered Spend -->
+      <rect x="0" y="0" width="190" height="60" rx="8" fill="#030712" stroke="#1e293b" stroke-width="1"/>
+      <text x="12" y="20" class="font-mono text-slate-500" font-size="9">CLIENT OFFERED BUDGET</text>
+      <text x="12" y="44" class="font-mono text-slate-200" font-size="18" font-weight="bold">$450.00</text>
+      <text x="130" y="44" class="font-mono text-slate-500" font-size="9">Pre-paid</text>
+
+      <!-- Metric 2: Benchmark Surcharge -->
+      <rect x="205" y="0" width="190" height="60" rx="8" fill="#030712" stroke="#06b6d4" stroke-width="1" stroke-opacity="0.6"/>
+      <text x="217" y="20" class="font-mono text-slate-500" font-size="9">BENCHMARK SURCHARGE (6h @ $60)</text>
+      <text x="217" y="44" class="font-mono neon-cyan" font-size="18" font-weight="bold">$360.00</text>
+      <text x="330" y="44" class="font-mono text-slate-500" font-size="9">Baseline</text>
+
+      <!-- Metric 3: Deficit Risk -->
+      <rect x="410" y="0" width="190" height="60" rx="8" fill="#064e3b" fill-opacity="0.2" stroke="#10b981" stroke-width="1"/>
+      <text x="422" y="20" class="font-mono text-slate-500" font-size="9">UNBILLED DEFICIT RISK</text>
+      <text x="422" y="44" class="font-mono neon-emerald" font-size="18" font-weight="bold">$0.00</text>
+      <text x="515" y="44" class="font-mono neon-emerald" font-size="9">Zero Leakage</text>
+    </g>
+
+    <!-- Policy Violations Matrix -->
+    <g transform="translate(20, 170)">
+      <rect width="600" height="90" rx="8" fill="#030712" stroke="#10b981" stroke-width="0.8" stroke-opacity="0.4"/>
+      <circle cx="20" cy="20" r="6" fill="#10b981"/>
+      <path d="M 17 20 L 19 22 L 24 17" fill="none" stroke="#030712" stroke-width="1.5"/>
+      <text x="35" y="24" class="font-mono neon-emerald" font-size="11" font-weight="bold">DETERMINISTIC COMPLIANCE: 100% (0 VIOLATIONS)</text>
+      <text x="480" y="24" class="font-mono text-slate-500" font-size="9">Engine: 2.5.0-DET</text>
+      
+      <line x1="12" y1="36" x2="588" y2="36" stroke="#1e293b" stroke-width="0.8"/>
+      
+      <text x="20" y="55" class="font-sans text-slate-300" font-size="10">✓ Hard budget ceiling check passed ($450 &lt; $5,000 threshold).</text>
+      <text x="20" y="70" class="font-sans text-slate-300" font-size="10">✓ Scope boundary respected; no unbilled feature expansions detected.</text>
+      <text x="20" y="85" class="font-sans text-slate-300" font-size="10">✓ Automated PII redaction active; zero credentials or access keys exposed.</text>
+    </g>
+
+    <!-- Visual Invoice Slip Slide-Over Preview (Mock) -->
+    <g transform="translate(20, 272)">
+      <rect width="600" height="70" rx="8" fill="#0f172a" stroke="#06b6d4" stroke-width="0.8" stroke-dasharray="4 4"/>
+      <text x="16" y="22" class="font-mono neon-cyan" font-size="10" font-weight="bold">CRYPTOGRAPHIC INVOICE SLIP &amp; WEBHOOK TELEMETRY:</text>
+      <text x="16" y="40" class="font-mono text-slate-300" font-size="9">Receipt: rcpt_1789495777241_UMDU7Z • Target: STRIPE_INVOICE • Total: $450.00 USD</text>
+      <rect x="16" y="48" width="180" height="16" rx="4" fill="#10b981" fill-opacity="0.2" stroke="#10b981" stroke-width="0.5"/>
+      <text x="24" y="59" class="font-mono neon-emerald" font-size="8">✓ Webhook Dispatched: 200 OK</text>
+      <text x="210" y="59" class="font-mono text-slate-500" font-size="8">→ http://localhost:3055/webhook-receiver</text>
+    </g>
+
+    <!-- Action Dispatch Bar -->
+    <g transform="translate(20, 355)">
+      <rect x="0" y="0" width="120" height="35" rx="6" fill="#030712" stroke="#334155" stroke-width="0.8"/>
+      <text x="16" y="21" class="font-mono text-slate-300" font-size="10">📄 Invoice Slip</text>
+
+      <rect x="130" y="0" width="190" height="35" rx="6" fill="#030712" stroke="#334155" stroke-width="0.8"/>
+      <text x="145" y="21" class="font-mono neon-cyan" font-size="10">Stripe Invoice Dispatch ▼</text>
+
+      <!-- Execute Dispatch Glowing Button -->
+      <rect x="330" y="0" width="270" height="35" rx="8" fill="url(#emeraldGlow)" filter="url(#glowEffect)" fill-opacity="0.8"/>
+      <rect x="330" y="0" width="270" height="35" rx="8" fill="url(#emeraldGlow)"/>
+      <text x="390" y="22" class="font-mono font-bold" fill="#030712" font-size="12">🚀 Execute Dispatch (Signed)</text>
+    </g>
+  </g>
+
+  <!-- ==================== BOTTOM ROW: AUDIT VAULT LEDGER ==================== -->
+  <g transform="translate(40, 545)">
+    <rect width="1120" height="95" rx="10" fill="url(#cardGrad)" stroke="#1e293b" stroke-width="1"/>
+    
+    <!-- Ledger Header -->
+    <text x="20" y="22" class="font-mono neon-cyan" font-size="10" font-weight="bold">AUDIT VAULT (LOCAL PERSISTENCE LEDGER)</text>
+    <rect x="295" y="11" width="140" height="15" rx="3" fill="#030712" stroke="#334155" stroke-width="0.6"/>
+    <text x="303" y="22" class="font-mono text-slate-400" font-size="8">airlock_audit_vault_v1</text>
+    <text x="960" y="22" class="font-mono text-slate-500" font-size="9">4 cryptographic records persisted</text>
+
+    <!-- 4 Ledger Tiles -->
+    <g transform="translate(20, 32)">
+      <!-- Tile 1 -->
+      <rect x="0" y="0" width="260" height="50" rx="6" fill="#030712" stroke="#10b981" stroke-width="0.8"/>
+      <text x="10" y="18" class="font-mono text-slate-200" font-size="9" font-weight="bold">Starlight Media</text>
+      <text x="180" y="18" class="font-mono neon-emerald" font-size="8">[DISPATCHED]</text>
+      <text x="10" y="32" class="font-mono text-slate-500" font-size="7">SHA: caed1fc80f6c5ab2...</text>
+      <text x="10" y="44" class="font-mono text-slate-400" font-size="8">SLACK • $450.00</text>
+
+      <!-- Tile 2 -->
+      <rect x="272" y="0" width="260" height="50" rx="6" fill="#030712" stroke="#f59e0b" stroke-width="0.8"/>
+      <text x="282" y="18" class="font-mono text-slate-200" font-size="9" font-weight="bold">HyperGrowth Labs</text>
+      <text x="450" y="18" class="font-mono" fill="#f59e0b" font-size="8">[QUARANTINED]</text>
+      <text x="282" y="32" class="font-mono text-slate-500" font-size="7">SHA: dca51ac0098057cd...</text>
+      <text x="282" y="44" class="font-mono text-slate-400" font-size="8">WHATSAPP • SCOPE AMBUSH</text>
+
+      <!-- Tile 3 -->
+      <rect x="544" y="0" width="260" height="50" rx="6" fill="#030712" stroke="#f43f5e" stroke-width="0.8"/>
+      <text x="554" y="18" class="font-mono text-slate-200" font-size="9" font-weight="bold">Titan Logistics Corp</text>
+      <text x="730" y="18" class="font-mono" fill="#f43f5e" font-size="8">[QUARANTINED]</text>
+      <text x="554" y="32" class="font-mono text-slate-500" font-size="7">SHA: 71c2cb0893eab44d...</text>
+      <text x="554" y="44" class="font-mono text-slate-400" font-size="8">EMAIL • CEILING &gt; $5K</text>
+
+      <!-- Tile 4 -->
+      <rect x="816" y="0" width="260" height="50" rx="6" fill="#030712" stroke="#8b5cf6" stroke-width="0.8"/>
+      <text x="826" y="18" class="font-mono text-slate-200" font-size="9" font-weight="bold">FinTech Syndicate</text>
+      <text x="990" y="18" class="font-mono" fill="#8b5cf6" font-size="8">[PII REDACTED]</text>
+      <text x="826" y="32" class="font-mono text-slate-500" font-size="7">SHA: b917d0aff4d69d21...</text>
+      <text x="826" y="44" class="font-mono text-slate-400" font-size="8">SLACK • 4 SECRETS SCRUBBED</text>
+    </g>
+  </g>
+</svg>

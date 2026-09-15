@@ -11,6 +11,10 @@
 [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-3.4-38B2AC?style=for-the-badge&logo=tailwind-css)](https://tailwindcss.com/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-emerald?style=for-the-badge)](LICENSE)
 
+<br />
+
+![Cognitive Airlock OS Aerospace Cockpit Preview](./public/airlock-preview.svg)
+
 ---
 
 </div>
