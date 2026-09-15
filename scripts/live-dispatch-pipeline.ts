@@ -142,7 +142,8 @@ async function runLiveDispatchPipeline() {
       throw new Error('Target webhook receiver did not receive POST request');
     }
 
-    const { headers, payload, receivedAt } = capturedWebhook;
+    const { headers, receivedAt } = capturedWebhook;
+    const payload: any = (capturedWebhook as any).payload;
     console.log('----------------------------------------------------------------');
     console.log('INCOMING WEBHOOK HEADERS:');
     console.log('  Content-Type:       ', headers['content-type']);
